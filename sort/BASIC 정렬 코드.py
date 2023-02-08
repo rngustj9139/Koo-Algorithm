@@ -13,10 +13,46 @@ for i in range(len(array)):
 print(array)
 '''
 
-######## 삽입 정렬 ########
+######## 삽입 정렬 O(N^2) ########
 # 데이터를 적절한 위치에 삽입
 # 데이터가 거의 정렬이 되어있을때 효율적이다.
 # 판단하는 데이터의 앞쪽 데이터들은 정렬이 되어있다고 판단한다.
 # 시작시 첫번째 원소는 정렬이 되어있다고 판단하고 두번째 원소부터 판단을 시작한다.
+'''
+array = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8]
 
+for i in range(1, len(array)):
+    for j in range(i, 0, -1):
+        if (array[j] < array[j - 1]):
+            array[j], array[j - 1] = array[j - 1], array[j]
+        else:
+            break
 
+print(array)
+'''
+
+######## 퀵 정렬 O(NlogN) ########
+array = [5, 7, 9, 0, 3, 1, 6, 2, 4, 8]
+
+def quick_sort(array, start, end):
+    if (start >= end): # 원소가 1개이면 종료
+        return
+    pivot = start
+    left = start + 1
+    right = end
+
+    while (left <= right):
+        while (left <= end and array[left] <= array[pivot]):
+            left += 1
+        while (right > start and array[right] >= array[pivot]):
+            right -= 1
+        if (left > right):
+            array[pivot], array[right] = array[right], array[pivot]
+        else:
+            array[left], array[right] = array[right], array[left]
+
+    quick_sort(array, start, right - 1)
+    quick_sort(array, right + 1, end)
+
+quick_sort(array, 0, len(array) - 1)
+print(array)
