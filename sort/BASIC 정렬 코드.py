@@ -32,6 +32,7 @@ print(array)
 '''
 
 ######## 퀵 정렬 O(NlogN) ########
+# 데이터가 이미 정렬되어 있을 경우 느리게 동작한다.
 array = [5, 7, 9, 0, 3, 1, 6, 2, 4, 8]
 
 def quick_sort(array, start, end):
