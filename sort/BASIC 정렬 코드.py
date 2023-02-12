@@ -33,6 +33,8 @@ print(array)
 
 ######## 퀵 정렬 O(NlogN) ########
 # 데이터가 이미 정렬되어 있을 경우 느리게 동작한다.
+# 최악의 경우에는 O(N^2)
+'''
 array = [5, 7, 9, 0, 3, 1, 6, 2, 4, 8]
 
 def quick_sort(array, start, end):
@@ -57,3 +59,22 @@ def quick_sort(array, start, end):
 
 quick_sort(array, 0, len(array) - 1)
 print(array)
+'''
+
+######## 계수 정렬(Counting sort) O(N + K) ########
+# 특정 조건에 부합할 때만 사용할 수 있지만, 매우 빠른 정렬 알고리즘
+# 데이터의 크기 범위가 제한되어 정수형태로 표현할 수 있을 때만 사용 가능
+# N은 데이터의 개수, K는 최댓값
+# 계수정렬은 직접 데이터의 값을 비교한 뒤에 위치를 변경하는 비교 기반의 정렬 알고리즘이 아니다.
+# 계수정렬은 일반적으로 데이터의 개수만큼의 리스트를 선언하고 그안에 정렬에 대한 정보를 담는다는 특징이 있다.
+'''
+array = [7, 5, 9, 0, 3, 1, 6, 2, 9, 1, 4, 8, 0, 5, 2]
+count = [0] * (max(array) + 1)
+
+for i in range(len(array)):
+    count[array[i]] += 1
+
+for i in range(len(count)):
+    for j in range(count[i]):
+        print(i, end=' ')
+'''
