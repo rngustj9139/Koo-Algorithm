@@ -1,5 +1,6 @@
 import sys
 input = sys.stdin.readline
+sys.setrecursionlimit(111111) # 충분한 재귀 깊이를 주어 오류를 예방
 
 def dfs(cur):
     visited[cur] = True
@@ -10,7 +11,7 @@ def dfs(cur):
             global cnt
             i = nxt
             while (i != cur):
-                i += 1
+                i = S[i]
                 cnt += 1
             cnt += 1
     else:
