@@ -43,7 +43,12 @@ print(len(determinedMeetingTime))
 print(determinedMeetingTime)
 
 
-
+'''
+내가 회의실을 사용하고 있다고 가정했을 때, 내 회의가 끝난 후에 회의실에서 가장 많은 회의가 열리기 위해서는 어떤 상황이 되야할까? 
+바로. 내 회의가 빨리 끝나야 하는 것이다. 즉, 종료 시간이 빨라야 한다.
+1 2, 2 2라는 두개의 회의가 존재하면 우선 첫번째 원소를 기준으로 오름차순 정렬한 뒤, 두번째 원소를 기준으로 오름차순 정렬해야
+두개의 회의를 완료할 수 있다.
+'''
 # import sys
 # input = sys.stdin.readline
 #
