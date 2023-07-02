@@ -48,7 +48,7 @@ k = 15, food_time=[8, 6, 4]일 때 가장 적은 3번째 음식을 다 먹으려
 1 2 1 2 => 4초 걸림 (남은 음식의 종류 * 2번째 음식을 다 먹으려면 걸리는 시간)
 but 3초를 초과하기 때문에 일단 먹지 않음
 
-1 2 1 2에서 3초 다음이 2번째 음식이기 때문에 2번째 음식을 출력
+[1 2 1 2에서 3초 다음이 2번째 음식이기 때문에 2번째 음식을 출력]
 
 우선순위 큐(heapq)는 디폴트가 최소힙(min heap) => heapq.heappop(q)[0] == q[0][0]
 '''
@@ -62,7 +62,7 @@ def solution(food_times, k):
 
     q = []
     for i in range(len(food_times)):
-        heapq.heappush(q, (food_times[i], i + 1))
+        heapq.heappush(q, (food_times[i], i + 1)) # 첫번째 원소를 기준으로 최소힙
 
     sum_time = 0
     previous_time = 0
