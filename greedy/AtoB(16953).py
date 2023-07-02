@@ -4,7 +4,7 @@ input = sys.stdin.readline
 A, B = map(int, input().split())
 cnt = 1
 
-while True:
+while (True):
     if (B == A):
         break
     elif (B % 2 != 0 and B % 10 != 1) or (B < A):

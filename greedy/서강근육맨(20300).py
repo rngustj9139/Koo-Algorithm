@@ -2,10 +2,8 @@ import sys
 input = sys.stdin.readline
 
 N = int(input())
-muscle_decrease = []
-results = []
-
 muscle_decrease = list(map(int, input().split()))
+results = []
 
 muscle_decrease.sort()
 
