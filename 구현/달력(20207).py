@@ -17,8 +17,8 @@ for _ in range(N):
     startDay, endDay = map(int, input().split())
     scheduleList.append([startDay, endDay])
 
-scheduleList.sort(key = lambda x:x[0])
-scheduleList.sort(key = lambda x:x[1]-x[0], reverse=True)
+scheduleList.sort(key = lambda x:x[0]) # 오름차순(시작일이 빠른 기준으로)
+scheduleList.sort(key = lambda x:x[1]-x[0], reverse=True) # (시작일이 같은 경우 더 긴 일정 먼저)
 minDay = min(map(min, scheduleList)) # 이차원 배열에서 최솟값 구하기
 maxDay = max(map(max, scheduleList)) # 이차원 배열에서 최댓값 구하기
 countSchedule = [0] * (maxDay + 1)

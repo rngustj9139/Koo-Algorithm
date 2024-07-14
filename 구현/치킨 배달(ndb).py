@@ -24,6 +24,7 @@ for i in range(N):
             chicken.append((i, j))
 
 candidates = list(combinations(chicken, M))
+# print(candidates)
 
 result = 1e9
 for candidate in candidates:

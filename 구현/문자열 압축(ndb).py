@@ -3,6 +3,16 @@
 aabbaccc, 2a2ba3c (1개 단위), 7개
 ababcdcdababcdcd, 2ababcdcd (8개 단위), 9개
 abcabcdede, 2abcdede (3개 단위), 8개
+
+===========
+
+abababcdcdcd
+
+a b a b a b c d c d c d
+
+ab ab ab cd cd cd
+
+3ab3cd
 '''
 
 def solution(s):
@@ -20,12 +30,13 @@ def solution(s):
                     compressed += str(cnt) + prev
                 else:
                     compressed += prev
-                prev = s[i:i + step]
                 cnt = 1
+                prev = s[i:i + step]
+
         # 남은 값 처리
         if (cnt >= 2):
             compressed += str(cnt) + prev
-        else:
+        else: # cnt가 1이면
             compressed += prev
 
         answer = min(answer, len(compressed))

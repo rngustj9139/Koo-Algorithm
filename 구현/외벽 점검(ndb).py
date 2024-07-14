@@ -6,6 +6,8 @@ weak => [1] 2 [3] [4] 5 6 7 8 [9] [10] 11 12 | [13] 14 [15] [16] 17 18 19 20 [21
 => 1 3 4 9 10 | 13 15 16 21 22
 
 dist => 3 5 7
+
+7을 좌표 9에 투입하여 시계방향(오른쪽)으로 가면 1명으로 해결된다.
 '''
 import sys
 input = sys.stdin.readline
@@ -28,6 +30,7 @@ def solution(n, weak, dist):
                         break
                     position = weak[index] + friends[count - 1]
             answer = min(answer, count)
+
     if (answer > len(dist)):
         return -1
 

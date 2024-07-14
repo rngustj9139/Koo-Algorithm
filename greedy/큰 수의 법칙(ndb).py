@@ -1,21 +1,21 @@
 '''
-import sys
-input = sys.stdin.readline
-
 N, M, K = map(int, input().split())
-arr = list(map(int, input().split()))
-cnt = 0
+numbers = list(map(int, input().split()))
+
+numbers.sort(reverse=True) # 내림차순
+mCnt = 0
+kCnt = 0
 result = 0
 
-arr.sort(reverse=True)
+while (mCnt < M):
+    mCnt += 1
+    kCnt += 1
 
-for _ in range(M):
-    if (cnt < K):
-        result += arr[0]
-        cnt += 1
+    if (kCnt <= K):
+        result += numbers[0]
     else:
-        cnt = 0
-        result += arr[1]
+        result += numbers[1]
+        kCnt = 0
 
 print(result)
 '''

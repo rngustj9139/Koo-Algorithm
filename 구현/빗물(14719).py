@@ -61,6 +61,29 @@
 #                 continue
 #
 # print(result)
+
+# def solution(blockHeightList):
+#     result = 0
+#
+#     for i in range(1, len(blockHeightList) - 1): # 1, 2
+#         leftMax = 0
+#         rightMax = 0
+#         for j in range(0, i):
+#             leftMax = max(leftMax, blockHeightList[j])
+#         for k in range(i + 1, len(blockHeightList)):
+#             rightMax = max(rightMax, blockHeightList[k])
+#         current = blockHeightList[i]
+#         standard = min(leftMax, rightMax)
+#         if (standard > current):
+#             result += (standard - current)
+#
+#     return result
+#
+# H, W = map(int, input().split())
+# blockHeightList = list(map(int, input().split()))
+#
+# print(solution(blockHeightList))
+
 '''
 특정 위치를 기준으로 양 옆에 현 위치보다 작은 높이의 블록이 있다면 해당 위치에는 물고이기 불가능
 특정 위치에 물이 고이기 위해선 현 위치보다 더 높은 블록으로 왼쪽과 오른쪽이 둘러싸여 있어야한다.
